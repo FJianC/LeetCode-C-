@@ -3,17 +3,29 @@
  *
  * [258] 各位相加
  */
+
+// @lc code=start
 class Solution {
 public:
     int addDigits(int num) {
+        // 1.
         // while (num >= 10) {
-        //     int temp = num;
-        //     for (num = 0; temp > 0; temp /= 10) {
+        //     auto temp = num;
+        //     num = 0;
+        //     while (temp) {
         //         num += temp % 10;
+        //         temp /= 10;
         //     }
         // }
         // return num;
-        if(num%9 == 0 && num!=0) return 9;
-        return (num%9);
+        // 2.
+        // while (num / 10) {
+        //     num = num % 10 + num / 10;
+        // }
+        // return num;
+        // 3. 数学归纳
+        return (num - 1) % 9 + 1;
     }
 };
+// @lc code=end
+
